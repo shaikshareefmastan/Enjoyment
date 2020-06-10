@@ -10,8 +10,7 @@ pipeline {
          steps {
 		 withDockerContainer(image: "maven"){
            script{
-				  sh "echo hello"
-                                 'mvn package'
+                                 "mvn package"
 				}
                 				
             }
