@@ -10,9 +10,10 @@ pipeline {
          steps {
 		 withDockerContainer(image: "maven"){
            script{
-                 dir('pipeline') {
+                               sh "pwd"
+                               sh "ls -la"
                                sh "mvn package"
-			}	
+			
                     }
                 				
             }
