@@ -8,7 +8,7 @@ pipeline {
        }
       stage('Build application') {
          steps {
-		 withDockerContainer(image: "selenium/standalone-chrome"){
+		 withDockerContainer(image: "maven"){
            script{
 				  sh "echo hello"
                                   mvn 'package'
