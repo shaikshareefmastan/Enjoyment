@@ -10,8 +10,8 @@ pipeline {
          steps {
 		 withDockerContainer(image: "selenium/standalone-chrome"){
            script{
-				   sh "echo hello"
-                                   mvn package
+				  sh "echo hello"
+                                  mvn 'package'
 				}
                 				
             }
