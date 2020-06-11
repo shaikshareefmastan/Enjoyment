@@ -8,11 +8,11 @@ pipeline {
        }
       stage('Build application') {
          steps {
-		 withDockerContainer(image: "maven"){
+		 withDockerContainer(image: "csanchez/selenium-maven"){
            script{
                                sh "pwd"
                                sh "ls -la"
-                               sh "mvn clean package -DskipTests"
+                               sh "mvn clean package"
 			
                     }
                 				
