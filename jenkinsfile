@@ -12,7 +12,7 @@ pipeline {
            script{
                                sh "pwd"
                                sh "ls -la"
-                               sh "mvn clean package"
+                               sh "mvn clean package -e"
 			
                     }
                 				
