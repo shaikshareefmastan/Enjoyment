@@ -8,7 +8,7 @@ pipeline {
        }
       stage('Build application') {
          steps {
-		 withDockerContainer(image: "csanchez/selenium-maven"){
+		 withDockerContainer(image: "shareefmastan/selenium:1.0"){
            script{
                                sh "pwd"
                                sh "ls -la"
