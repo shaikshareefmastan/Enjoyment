@@ -8,7 +8,7 @@ pipeline {
        }
       stage('Build application') {
          steps {
-		 withDockerContainer(image: "shareefmastan/selenium:1.0" arg: "-p 4444:4545"){
+		withDockerContainer(image 'shareefmastan/selenium:1.0' arg '-p 4444:4545'){
            script{
                                sh "pwd"
                                sh "ls -la"
