@@ -1,0 +1,15 @@
+def project = 'shaikshareefmastan/Enjoyment'
+def folderApi = new URL("https://api.github.com/repos/${project}/contents")
+def folders = new groovy.json.JsonSlurper().parse(folderApi.newReader())
+folders.each {
+    def folderName = it.name
+    def jobName = "${project}-${folderName}".replaceAll('/','-')
+    job(jobName) {
+        scm {
+            git("git://github.com/${project}.git", folderName)
+        }
+        steps {
+            maven("test -Dproject.name=${project}/${folderName}")
+        }
+    }
+  }
