@@ -8,7 +8,7 @@ pipeline {
        }
       stage('Build application') {
          steps {
-		withDockerContainer(image: "shareefmastan/seleniumstandalone-debug_vnc", args: "-p 4444:4444 -p 5900:5900"){
+		withDockerContainer(image: "shareefmastan/seleniumstandalone-debug_vnc:1.0", args: "-p 4444:4444 -p 5900:5900"){
            script{
                                sh "pwd"
                                sh "ls -la"
