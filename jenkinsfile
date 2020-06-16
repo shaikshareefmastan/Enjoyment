@@ -13,14 +13,14 @@ pipeline {
                                sh "pwd"
                                sh "ls -la"
                                sh "mvn clean package -DskipTests"
-            dir('target'){
-                           sh  "java -cp container-test.jar:libs/* -DseleniumHubHost=localhost -Dbrowser=chrome org.testng.TestNG ../suite/search-module.xml"
-                          }
 			
                     }
                 				
             }
-            
+            dir('target'){
+                           sh  "java -cp container-test.jar:libs/* -DseleniumHubHost=localhost -Dbrowser=chrome org.testng.TestNG ../suite/search-module.xml"
+                          }
+
          }
       }
    }
